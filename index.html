@@ -1,39 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <title>图片对比工具</title>
-    <style>
-        body {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .image-container {
-            position: relative;
-            overflow: hidden;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-        .image-container img {
-            width: 100%;
-            transition: transform 0.2s ease;
-        }
-        #import-btn {
-            margin: 20px;
-        }
-        #images {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-    <input type="file" id="import-btn" accept="image/*" multiple>
-    <div id="images"></div>
+    <div id="container">
+        <h1>图片对比工具</h1>
+        <article>选择最多 4 张图片进行对比。支持鼠标滚轮缩放、拖拽移动，所有图片会同步操作，方便对比细节。</article>
+        
+        <div class="control-section">
+            <label for="import-btn" class="file-label">选择图片（最多 4 张）</label>
+            <input type="file" id="import-btn" accept="image/*" multiple>
+        </div>
+
+        <div id="images" class="images-container"></div>
+    </div>
+
+    <footer>
+        <center>
+            <a href="https://github.com/luhuadong/image-compare" target="_blank"><img src="https://cdn.jsdelivr.net/gh/Closty/duanwangzhi/github.png" style="width:50px;"> </a>
+        </center>
+    </footer>
 
     <script src="script.js"></script>
 </body>
