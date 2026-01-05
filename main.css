@@ -63,6 +63,9 @@ article {
     color: #2C2C2C;
     cursor: pointer;
     transition: border-color 0.2s, box-shadow 0.2s;
+    max-width: 100%;
+    width: auto;
+    box-sizing: border-box;
 }
 
 #import-btn:hover {
@@ -189,8 +192,18 @@ footer a:hover img {
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
     #container {
-        padding: 30px 25px;
+        padding: 30px 20px;
+    }
+    
+    #import-btn {
+        width: 100%;
+        padding: 10px 16px;
+        font-size: 14px;
     }
     
     .images-container.layout-2,
