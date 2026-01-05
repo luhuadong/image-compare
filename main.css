@@ -207,17 +207,25 @@ footer a:hover img {
     }
     
     .images-container.layout-2,
-    .images-container.layout-3,
-    .images-container.layout-4 {
+    .images-container.layout-3 {
         height: auto;
         min-height: 400px;
     }
     
     .images-container.layout-2 .image-container,
-    .images-container.layout-3 .image-container,
-    .images-container.layout-4 .image-container {
+    .images-container.layout-3 .image-container {
         width: 100%;
         height: 300px;
+    }
+    
+    /* 4张图片在窄屏时也保持四宫格布局 */
+    .images-container.layout-4 {
+        height: 600px;
+    }
+    
+    .images-container.layout-4 .image-container {
+        width: calc(50% - 1px);
+        height: calc(50% - 1px);
     }
 }
 
