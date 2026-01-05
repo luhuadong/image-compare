@@ -35,7 +35,7 @@ article {
     font-size: 14px; 
     color: #6B6B6B;
     line-height: 1.8;
-    text-align: justify;
+    text-align: center;
     padding: 15px 0;
     margin-bottom: 30px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
@@ -125,7 +125,7 @@ article {
 
 .images-container.layout-2 .image-container {
     width: calc(50% - 1px);
-    height: calc(50% - 1px);
+    height: 100%;
 }
 
 .images-container.layout-2.portrait .image-container {
