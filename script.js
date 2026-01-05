@@ -81,8 +81,8 @@ function handleWheel(event) {
     const newScale = scale * delta;
     
     if (newScale >= MIN_SCALE && newScale <= MAX_SCALE) {
-        // 获取鼠标位置相对于第一个图片容器的坐标
-        const container = imageContainers[0];
+        // 使用触发事件的容器来计算鼠标位置（确保每个容器都能正确计算）
+        const container = event.currentTarget;
         const rect = container.getBoundingClientRect();
         const containerCenterX = rect.left + rect.width / 2;
         const containerCenterY = rect.top + rect.height / 2;
@@ -92,6 +92,7 @@ function handleWheel(event) {
         const mouseY = event.clientY - containerCenterY;
         
         // 计算缩放前后的鼠标位置（考虑当前的平移）
+        // 在缩放前，鼠标指向的图片点在图片坐标系中的位置
         const beforeScaleX = (mouseX - translateX) / scale;
         const beforeScaleY = (mouseY - translateY) / scale;
         
@@ -99,6 +100,7 @@ function handleWheel(event) {
         scale = newScale;
         
         // 计算新的平移量，使鼠标位置下的图片点保持不变
+        // 缩放后，该点在容器坐标系中的新位置
         translateX = mouseX - beforeScaleX * scale;
         translateY = mouseY - beforeScaleY * scale;
         
